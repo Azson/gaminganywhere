@@ -25,6 +25,9 @@
 #include "ga-common.h"
 #include "ga-avcodec.h"
 
+#define AV_CODEC_FLAG_GLOBAL_HEADER (1 << 22)
+#define CODEC_FLAG_GLOBAL_HEADER AV_CODEC_FLAG_GLOBAL_HEADER
+
 using namespace std;
 
 // avcodec_open/close is not thread-safe

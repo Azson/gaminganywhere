@@ -31,6 +31,9 @@
 #include "ga-avcodec.h"
 #include "ga-module.h"
 
+#define AV_CODEC_FLAG_GLOBAL_HEADER (1 << 22)
+#define CODEC_FLAG_GLOBAL_HEADER AV_CODEC_FLAG_GLOBAL_HEADER
+
 //MODULE EXPORT void * aencoder_threadproc(void *arg);
 
 static int aencoder_initialized = 0;
