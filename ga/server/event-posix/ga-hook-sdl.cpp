@@ -46,6 +46,8 @@
 #endif
 
 #include <map>
+#include <time.h>
+#include <iostream>
 using namespace std;
 
 #ifndef WIN32
@@ -616,6 +618,8 @@ sdl12_mapinit() {
 
 static void
 sdl12_hook_replay(sdlmsg_t *msg) {
+
+	ga_error("ubuntu sdl1 ctl msg size %u\n", msg->msgsize);
 	SDL12_Event sdl12evt;
 	map<int,int>::iterator mi;
 	double scaleX, scaleY;

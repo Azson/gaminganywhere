@@ -206,6 +206,7 @@ quit:
 
 static void
 sdl2_hook_replay(sdlmsg_t *msg) {
+	printf("ubuntu sdl2 ctl msg size %u\n", msg->msgsize);
 	SDL_Event sdl2evt;
 	map<int,int>::iterator mi;
 	double scaleX, scaleY;

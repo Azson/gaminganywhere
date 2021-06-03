@@ -36,7 +36,7 @@
 #ifndef WIN32
 #include "ga-hook-lib.h"
 #endif
-
+#include <iostream>
 #include <map>
 using namespace std;
 
@@ -97,6 +97,7 @@ quit:
 
 static void
 sdlaudio_dump_audiospec(SDL12_AudioSpec *spec) {
+	cout << "sdlaudio_dump_audiospec : ubuntu sdl audio size \n" << spec->size << endl;;
 	ga_error("SDL_OpenAudio: freq=%d format=%x channels=%d silence=%d samples=%d padding=%d size=%d callback=%p userdata=%p\n",
 		spec->freq, spec->format, spec->channels, spec->silence,
 		spec->samples, spec->padding, spec->size,
@@ -163,6 +164,8 @@ SDL2SWR_chlayout(uint8_t channels) {
 
 int
 hook_SDL_OpenAudio(SDL12_AudioSpec *desired, SDL12_AudioSpec *obtained) {
+	cout << "hook_SDL_OpenAudio : ubuntu sdl audio size \n" << desired->size << endl;;
+	cout << "hook_SDL_OpenAudio : ubuntu sdl audio size \n" <<  obtained->size << endl;;
 	int ret;
 	if(old_SDL_OpenAudio == NULL) {
 		sdlaudio_hook_symbols();

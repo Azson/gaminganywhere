@@ -361,6 +361,7 @@ vencoder_threadproc(void *arg) {
 			} else {
 				gettimeofday(&tv, NULL);
 			}
+			ga_error("encoder pkt  %ld\n", pkt.size);
 			// send the packet
 			if(encoder_send_packet("video-encoder",
 				iid/*rtspconf->video_id*/, &pkt,

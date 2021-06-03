@@ -160,6 +160,7 @@ audio_source_buffer_read(audio_buffer_t *ab, unsigned char *buf, int frames) {
 	}
 	if(copyframe > 0) {
 		copysize = copyframe * ab->channels * ab->bitspersample / 8;
+		ga_error("audio frame copy %d\n", copysize);
 		//
 		bcopy(&ab->buffer[ab->bufhead], buf, copysize);
 		//
