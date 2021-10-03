@@ -153,6 +153,7 @@ ga_hook_capture_prepared(int width, int height, int check_resolution) {
 
 void
 ga_hook_capture_dupframe(vsource_frame_t *frame) {
+	ga_error("mbp commom frame size %u\n", frame->imgbufsize);
 	int i;
 	for(i = 1; i < SOURCES; i++) {
 		dpipe_buffer_t *dupdata;

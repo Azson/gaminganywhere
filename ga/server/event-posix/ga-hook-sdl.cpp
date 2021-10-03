@@ -616,6 +616,7 @@ sdl12_mapinit() {
 
 static void
 sdl12_hook_replay(sdlmsg_t *msg) {
+	printf("mbp sdl1s ctl msg size %u\n", msg->msgsize);
 	SDL12_Event sdl12evt;
 	map<int,int>::iterator mi;
 	double scaleX, scaleY;

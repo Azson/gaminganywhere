@@ -97,6 +97,7 @@ quit:
 
 static void
 sdlaudio_dump_audiospec(SDL12_AudioSpec *spec) {
+	ga_error("mbp sdl audio size %d\n", spec->size);
 	ga_error("SDL_OpenAudio: freq=%d format=%x channels=%d silence=%d samples=%d padding=%d size=%d callback=%p userdata=%p\n",
 		spec->freq, spec->format, spec->channels, spec->silence,
 		spec->samples, spec->padding, spec->size,
